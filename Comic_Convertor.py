@@ -3,13 +3,12 @@ import os
 from datetime import datetime
 
 # Path to your HTML file
-html_file = r'C:/Users/jonat/OneDrive/Desktop/Cool Scripts/Comic Getter/daily_comics.html'
-
+html_file = r'YourHTMLFile
 # Path to Chrome executable (you need to specify the correct path for your system)
 chrome_path = r'C:\Program Files\Google\Chrome\Application\chrome.exe'  # This is the default path
 
 # Folder to save the PDF
-save_folder = r'G:\My Drive\Comic Getter'
+save_folder = r'SaveFolder'
 
 # Ensure the folder exists
 if not os.path.exists(save_folder):
