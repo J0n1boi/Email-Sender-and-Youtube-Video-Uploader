@@ -4,4 +4,12 @@ to use this code, download all of them, one of them is a windows batch file, (my
 
 Just replace some things with your own :)
 
+You would run the scripts in this order:
+
+Comic getter
+
+Comic Converter
+
+Email Sender And Uploader
+
 Thanks!
