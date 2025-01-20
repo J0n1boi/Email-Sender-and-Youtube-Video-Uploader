@@ -20,7 +20,7 @@ from email import encoders
 from datetime import datetime
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
-EMAILS_FILE = "../../../OneDrive/Desktop/Cool Scripts/Comic Getter/emails_list.json"
+EMAILS_FILE = "../../../EmailsFile"
 UPLOADED_VIDEO_FILE = "uploaded_video.json"  # To track uploaded videos
 
 def get_current_day():
@@ -83,8 +83,7 @@ def upload_video(file_path, title, description, category_id="22", tags=None):
 
 def get_video_description(today_day, emails):
     num_people = len(emails.get(today_day, []))
-    return (f"There are currently {num_people} signed up for the daily comics via email. "
-            "You can be one too, at \ntinyurl.com/comicsignup")
+    return (f"YoutubeDescription")
 
 
 def load_emails():
@@ -120,17 +119,9 @@ def load_uploaded_video(today_date):
 
 # Ensure send_email is defined above manage_emails
 def send_email(to_email, today_date, video_link):
-    from_email = "noreply.comicbot@gmail.com"
-    subject = f"Daily Comics for {today_date}"
-    message = ("Hello! This email has been sent automatically by a python script. "
-               "If you have no idea what this is, that's okay. You should have been told in some way that this was coming to you. "
-               "Please delete this email if you have no clue what this is. "
-               "Thanks! "
-               "https://drive.google.com/drive/folders/1Z7z1vmprpSctsKwPWfd9K-0YxIvYdWEx?usp=drive_link "
-               f"If you go inside the folder, there will be a .pdf file named today's date, {today_date}.pdf (CST). "
-               "If you want to 'watch' the comics on YouTube, then subscribe to https://youtube.com/@dailycomicbot. "
-               f"Here is the direct link to today's video: {video_link} "
-               "If you have any questions, please reply to jonnie.r.albright@gmail.com.")
+    from_email = "YourEmail"
+    subject = f"Subject"
+    message = ("Message")
 
     msg = MIMEMultipart()
     msg['From'] = from_email
@@ -139,7 +130,7 @@ def send_email(to_email, today_date, video_link):
 
     msg.attach(MIMEText(message, 'plain'))
 
-    attachment_path = f"G:/My Drive/Comic Getter/{today_date}.pdf"
+    attachment_path = f"Attachment File"
     if os.path.exists(attachment_path):
         try:
             with open(attachment_path, "rb") as attachment:
@@ -156,7 +147,7 @@ def send_email(to_email, today_date, video_link):
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login(from_email, "uadejrkrnbxnzpbc")
+        server.login(from_email, "ChromeAppPassword")
         server.sendmail(from_email, to_email, msg.as_string())
         server.quit()
         print(f"Email has been sent to {to_email}")
@@ -251,7 +242,7 @@ def manage_emails():
         elif action == "4":
             recipient = input("Enter the recipient's email or type 'test' to send to you: ").strip()
             if recipient.lower() == "test":
-                recipient = "jonnie.r.albright@gmail.com"
+                recipient = "YourEmailForQuickAccess"
 
             today_date = datetime.today().strftime('%Y-%m-%d')
             video_link = load_uploaded_video(today_date)
