@@ -210,7 +210,7 @@ def manage_emails():
             video_link = load_uploaded_video(today_date)
 
             if not video_link:
-                pdf_file = f"G:/My Drive/Comic Getter/{today_date}.pdf"
+                pdf_file = f"PathToPDFFile"
                 if not os.path.exists(pdf_file):
                     print(f"PDF file for today ({today_date}) not found. Please generate it first.")
                     continue
@@ -248,7 +248,7 @@ def manage_emails():
             video_link = load_uploaded_video(today_date)
 
             if not video_link:
-                pdf_file = f"G:/My Drive/Comic Getter/{today_date}.pdf"
+                pdf_file = f"PathToPDFFile"
                 if not os.path.exists(pdf_file):
                     print(f"PDF file for today ({today_date}) not found. Please generate it first.")
                     continue
